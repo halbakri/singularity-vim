@@ -15,5 +15,3 @@ if [ -d /local ]; then
 fi
 
 singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"
-
-
