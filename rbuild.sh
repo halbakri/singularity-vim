@@ -1,7 +1,8 @@
 #!/bin/bash
 
-VERSION=4.8.25
-IMAGE=singularity-mc-"$VERSION".sif
+VERSION=1.33.0
+PACKAGE=vim
+IMAGE=singularity-"$PACKAGE"-"$VERSION".sif
 DEFINITION=Singularity
 
 if [ -f $IMAGE ]; then

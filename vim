@@ -1,13 +1,9 @@
 #!/bin/bash
 
-if [ ! $(command -v singularity) ]; then
-	module load singularity
-fi
-
-VERSION=4.8.25
-PACKAGE=mc
+VERSION=1.33.0
+PACKAGE=vim
 TOOL=$PACKAGE
-DIRECTORY=/opt/packages/$PACKAGE/$VERSION
+DIRECTORY=$(dirname "$0")
 
 PERSISTENT_FILE_STORAGE=/ocean
 if [ -d $PERSISTENT_FILE_STORAGE ]; then
@@ -19,3 +15,5 @@ if [ -d /local ]; then
 fi
 
 singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"
+
+
